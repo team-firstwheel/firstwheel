@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature android:name="android.hardware.type.automotive" android:required="true" />
+
+    <!-- AAOS 표준 차량 속성: 속도(PERF_VEHICLE_SPEED), 기어(GEAR_SELECTION) -->
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    <uses-permission android:name="android.car.permission.CAR_POWERTRAIN" />
+
+    <!--
+      Pleos Connect SDK 권한(핸들, 브레이크, 방향지시등, ADAS 등)은
+      Pleos App Market과 협의·승인된 범위만 선언한다. 미승인 권한을 선언하면 앱 심사에서 반려된다.
+    -->
+
+    <application
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+            <!-- 주행 중에도 표시 가능한 화면임을 선언 (Driver Distraction 가이드 준수 필요) -->
+            <meta-data android:name="distractionOptimized" android:value="true" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

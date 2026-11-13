@@ -115,7 +115,7 @@ class CoachEngine(
         val sub = nav?.let { "${it.maneuverName}까지 ${"%.1f".format(it.distanceToManeuverM / 1000)}km, ${dir}으로 ${it.lanesToMove}차선 이동" } ?: ""
         val state = when (val a = advisor.advise(side, cars)) {
             is LaneChangeAdvice.SafeNow ->
-                CoachUiState(CoachMode.LANE_CHANGE, "차선 변경 안내", "지금 방향지시등을 켜고 이동하세요", sub, Tone.GO)
+                CoachUiState(CoachMode.LANE_CHANGE, "차선 변경 안내", "지금 방향지시등을 켜고, 주변을 확인한 뒤 이동하세요", sub, Tone.GO)
             is LaneChangeAdvice.Wait ->
                 CoachUiState(CoachMode.LANE_CHANGE, "차선 변경 안내", "잠시 기다리세요", "${a.countdown}초 후 ${dir} 차선으로 이동할 수 있어요", Tone.WAIT, a.countdown)
             is LaneChangeAdvice.NotAvailable ->

@@ -14,7 +14,7 @@
 ## APK 파일 위치
 
 - [`apk/공파리_첫바퀴_release.apk`](apk/공파리_첫바퀴_release.apk)
-<!-- APK를 GitHub Releases에 올렸다면 아래 줄을 Release 페이지 주소로 바꾸기 -->
+  
 - GitHub Release: 해당 없음 (저장소 `apk/` 폴더에 포함)
 
 ## 실행 방법
@@ -47,7 +47,6 @@ Android Studio에서 열 때는 프로젝트 폴더를 그대로 열면 `gradle/
 
 ## 테스트 환경 및 필요한 설정
 
-<!-- 실제로 테스트한 에뮬레이터 이미지·버전으로 확인 후 수정 -->
 | 항목 | 내용 |
 |---|---|
 | 실행 기기 | Pleos Connect Emulator (Android Automotive OS 기반 AVD) |
